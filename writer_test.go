@@ -15,6 +15,7 @@ var writeTests = []struct {
 	Output  string
 	UseCRLF bool
 }{
+	{Input: [][]string{{"", "\"haha\"", ""}}, Output: ",\"\"\"haha\"\"\",\n"},
 	{Input: [][]string{{"abc"}}, Output: "abc\n"},
 	{Input: [][]string{{"abc"}}, Output: "abc\r\n", UseCRLF: true},
 	{Input: [][]string{{`"abc"`}}, Output: `"""abc"""` + "\n"},
