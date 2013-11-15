@@ -115,8 +115,8 @@ func (w *Writer) WriteAll(records [][]string) (err error) {
 }
 
 // fieldNeedsQuotes returns true if our field must be enclosed in quotes.
-// Empty fields, files with a Comma, fields with a quote or newline, and
-// fields which start with a space must be enclosed in quotes.
+// Files with a Comma, fields with a quote or newline, and fields which start
+// with a space must be enclosed in quotes.
 func (w *Writer) fieldNeedsQuotes(field string) bool {
 	if strings.IndexRune(field, w.Comma) >= 0 || strings.IndexAny(field, "\"\r\n") >= 0 {
 		return true
